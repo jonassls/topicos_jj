@@ -9,7 +9,7 @@
 
 <body>
     <form action="logar.php" method="post">
-        <label>Usuário: <input type="email" name="text"><br><br></label>
+        <label>Usuário: <input type="email" name="text"></label><br><br>
         <label>Email: <input type="email" name="email"></label><br><br>
         <label>Senha: <input type="password" name="senha"></label><br><br>
         <input type="submit" value="Login">
