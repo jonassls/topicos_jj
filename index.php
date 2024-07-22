@@ -9,12 +9,11 @@
 
 <body>
     <form action="logar.php" method="post">
-        <label>Usuário: <input type="email" name="text"></label><br><br>
-        <label>Email: <input type="email" name="email"></label><br><br>
+        <label>Usuário: <input type="text" name="usuario"></label><br><br>
         <label>Senha: <input type="password" name="senha"></label><br><br>
         <input type="submit" value="Login">
     </form><br><br>
-    <a href="">Cadastrar</a><br><br>
+    <a href="cadastrar-form.php">Cadastrar</a><br><br>
     <a href="">Recuperar Senha</a>
 </body>
 
