@@ -14,7 +14,7 @@
         <input type="submit" value="Login">
     </form><br><br>
     <a href="cadastrar-form.php">Cadastrar</a><br><br>
-    <a href="logar.php">Recuperar Senha</a>
+    <a href="recuperar-form.php">Recuperar Senha</a>
 </body>
 
 </html>
