@@ -14,11 +14,14 @@ $conexao = conectar();
 $sql = "SELECT * FROM usuario WHERE usuario='$usuario_login' AND senha='$senha'";
 $resultado = executarSQL($conexao, $sql);
 $usuario = mysqli_fetch_assoc($resultado);
+$email = $usuario['email'];
+$nome = $usuario['usuario'];
 
 $row = mysqli_num_rows($resultado);
 
 if ($row == 1) {
-	$_SESSION['usuario'] = $usuario;
+	$_SESSION['email'] = $email;
+	$_SESSION['usuario'] = $nome;
 	header('Location: principal.php');
 	exit();
 }

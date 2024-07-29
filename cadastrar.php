@@ -7,8 +7,8 @@ $email = $_POST['email'];
 $senha = $_POST['senha'];
 
 // TODO armazenar a senha de modo seguro
-$sql = "INSERT INTO usuario (usuario, email, senha) VALUES
-('$usuario', '$email','$senha')";
+$sql = "INSERT INTO usuario (usuario, email, senha, foto_perfil) VALUES
+('$usuario', '$email','$senha', 'padrao.png')";
 $resultado = mysqli_query($conexao, $sql);
 if ($resultado === false) {
     if (mysqli_errno($conexao) == 1062) {
