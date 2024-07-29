@@ -13,7 +13,7 @@
         <label>Senha: <input type="password" name="senha"></label><br><br>
         <input type="submit" value="Login">
     </form><br><br>
-    <a href="cadastrar-form.php">Cadastrar</a><br><br>
+    <a href="cadastrar-form.php">Cadastrar</a><br><br><br>
     <a href="recuperar-form.php">Recuperar Senha</a>
 </body>
 
