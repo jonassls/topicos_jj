@@ -22,22 +22,19 @@ $foto = $usuario['foto_perfil'];
 </head>
 
 <body>
-    <h1>Perfil<h1>
-            <tbody>
-
-                <th>
-                <td>
-                <img src="./uploads/<?php echo $foto ?>" width="50" height="50">
-                <?php echo $usuario['usuario'] . "<br>"; ?></td>
-                </th>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <fieldset>
+    <legend><h1>Perfil</h1></legend>
+                <img src="./uploads/<?php echo $foto ?>" width="50" height="50"><br>
+                <?php echo $usuario['usuario'] . "<br>"; ?>
                 <?php echo $usuario['email'] . "<br>"; ?>
-                <?php echo $usuario['senha'] . "<br>"; ?>
 
-                <form action="upload.php" method="post" enctype="multipart/form-data">
+               
                     <input type="submit" value="Enviar">
                 </form>
             </tbody>
             </form>
+            </fieldset>
 </body>
 
 </html>
