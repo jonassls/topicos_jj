@@ -1,12 +1,16 @@
 <?php
 session_start();
+include_once "conecta.php";
 $pastaDestino = "/uploads/";
-
-$sql1 = "SELECT * FROM usuario WHERE usuario='$eeeee'";
-$resultado1 = executarSQL($conexao, $sql1);
-$usuario = mysqli_fetch_assoc($resultado);
-
 $email = $_SESSION['email'];
+$_FILES['arquivo'] = $_POST['arquivo'];
+
+$conexao = conectar();
+$sql1 = "SELECT * FROM usuario WHERE email='$email'";
+$resultado1 = executarSQL($conexao, $sql1);
+$usuario = mysqli_fetch_assoc($resultado1);
+
+
 
 if ($_FILES['arquivo']['size'] > 2000000) { 
     echo "O tamanho da foto selecionada é maior que o limite permitido. Limite máximo: 2 MB.";
