@@ -9,6 +9,7 @@ $conexao = conectar();
 $sql = "SELECT * FROM usuario WHERE email='$usuario_logado'";
 $resultado = executarSQL($conexao, $sql);
 $usuario = mysqli_fetch_assoc($resultado);
+$foto = $usuario['foto_perfil'];
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,9 @@ $usuario = mysqli_fetch_assoc($resultado);
             <tbody>
 
                 <th>
-                <td><?php echo $usuario['usuario'] . "<br>"; ?></td>
+                <td>
+                <img src="./uploads/<?php echo $foto ?>" width="50" height="50">
+                <?php echo $usuario['usuario'] . "<br>"; ?></td>
                 </th>
                 <?php echo $usuario['email'] . "<br>"; ?>
                 <?php echo $usuario['senha'] . "<br>"; ?>
