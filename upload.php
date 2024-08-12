@@ -3,7 +3,9 @@ session_start();
 include_once "conecta.php";
 $pastaDestino = "/uploads/";
 $email = $_SESSION['email'];
-$_FILES['arquivo'] = $_POST['arquivo'];
+$alt_usuario = $_POST['usuario'];
+$alt_email = $_POST['email'];
+
 
 $conexao = conectar();
 $sql1 = "SELECT * FROM usuario WHERE email='$email'";
@@ -41,7 +43,7 @@ $fezUpload = move_uploaded_file(
     __DIR__ . $pastaDestino . $nomeArquivo . "." . $extensao);
 if ($fezUpload == true) {
     $conexao = mysqli_connect("localhost", "root", "", "login");
-    $sql = "UPDATE `usuario` SET `foto_perfil`='$nomeArquivo.$extensao' WHERE email='$email'";
+    $sql = "UPDATE `usuario` SET `usuario`='$alt_usuario', `email`='$alt_email', `foto_perfil`='$nomeArquivo.$extensao' WHERE email='$email'";
     $resultado = mysqli_query($conexao, $sql);
     if ($resultado != false) {
         // se for uma alteração de arquivo

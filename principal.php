@@ -1,9 +1,8 @@
 <?php
 include "conecta.php";
 
-
-
 session_start();
+if (isset($_SESSION['email'])) {
 $usuario_logado = $_SESSION['email'];
 $conexao = conectar();
 $sql = "SELECT * FROM usuario WHERE email='$usuario_logado'";
@@ -26,15 +25,20 @@ $foto = $usuario['foto_perfil'];
     <fieldset>
     <legend><h1>Perfil</h1></legend>
                 <img src="./uploads/<?php echo $foto ?>" width="50" height="50"><br>
-                <?php echo $usuario['usuario'] . "<br>"; ?>
-                <?php echo $usuario['email'] . "<br>"; ?>
+                Usuário: <?php echo $usuario['usuario'] . "<br><br>"; ?>
+                Email: <?php echo $usuario['email'] . "<br>"; ?>
 
-               
-                    <input type="submit" value="Enviar">
+               <hr>
+                    <a href="alterar-conta.php?foto=<?php echo $foto ?>">Alterar Informações da Conta</a><br><br>
+                    <a href="sair.php">Logout</a>
                 </form>
             </tbody>
             </form>
             </fieldset>
 </body>
-
 </html>
+<?php }
+else {
+    header( "Location: index.php");
+}
+?>
